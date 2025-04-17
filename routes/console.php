@@ -9,8 +9,4 @@ Artisan::command('inspire', function () {
     Log::info(Inspiring::quote());
 })->purpose('Display an inspiring quote');
 
-Schedule::call(function () {
-    Log::info("Logging...");
-})->everyFiveSeconds();
-
-Schedule::job(new SendReminderNotification)->everyFiveSeconds();
+Schedule::job(new SendReminderNotification)->everyTwoHours();
